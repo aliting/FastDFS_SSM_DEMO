@@ -8,4 +8,7 @@ package com.itqf.utils;
  * @Time: 下午3:38
  */
 public class RedisUtils {
+   public  boolean isExists(String key){
+    return false;
+ }
 }
