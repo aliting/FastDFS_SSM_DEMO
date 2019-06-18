@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--1,引入外部样式-->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <!--2,引入jquery-->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $.ajax({
+                url:"/findAll.do",
+                type:'get',
+                dataType:'json',
+                success:function(r){
+                    var jsonArray  = r.tbItems;
+                    $.each(jsonArray,function(i,v){
+                        //console.log(i+"---"+v);
+                        var name = v.name;
+                        var price = v.price;
+                        var images = v.images;//aaa,bb,cc
+                        var image = images.split(",");
+
+                          console.log(image[0]);
+                        var html = "<div class=\"row\" style=\"width:500px\">\n" +
+                            "    <div class=\"media\">\n" +
+                            "        <a href=\"#\" class=\"media-left media-middle media-bottom\">\n" +
+                            "<img src="+image[0]+" width=\"100\"/>\n" +
+                            "        </a>\n" +
+                            "        <div class=\"media-body\">\n" +
+                            "            <h4 class=\"media-heading\">"+name+"</h4>\n" +
+                            "            <p>"+price+
+                            "            </p>\n" +
+                            "        </div>\n" +
+                            "    </div>\n" +
+                            "</div>";
+                        var $html = $(html);
+
+                        $("#containner").append($html);
+                       // $("#containner").append("<br>");
+
+                    });
+
+                }
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div id="containner"></div>
+
+</body>
+</html>
