@@ -12,16 +12,18 @@ public class RedisUtils {
     return false;
  }
 
-    //dev  分支下开发的
+    //dev  分支下开发的  我写的
     public  boolean expire(String key,long tile){
+        System.out.println("aaaaaaaaa");
         return false;
     }
 
-     public  boolean expire(String key,long time){
-
-        System.out.println("neivgbeibvoigbiuewghvuirw");
-         return false;
-   }
+    //同事写的
+//     public  boolean expire(String key,long time){
+//
+//        System.out.println("neivgbeibvoigbiuewghvuirw");
+//         return false;
+//   }
 
 
 
