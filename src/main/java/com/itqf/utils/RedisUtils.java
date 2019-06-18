@@ -11,4 +11,13 @@ public class RedisUtils {
    public  boolean isExists(String key){
     return false;
  }
+   
+     public  boolean expire(String key,long time){
+        
+        System.out.println("neivgbeibvoigbiuewghvuirw");
+         return false;
+   }
+   
+   
+   
 }
